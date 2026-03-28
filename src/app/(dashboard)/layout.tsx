@@ -21,8 +21,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <div className="flex flex-row items-center gap-2 px-3.5">
           {user?.image && (
             <Image
-              src={user?.image}
-              alt={user?.name || ""}
+              src={user.image}
+              alt={user.name || ""}
               width={32}
               height={32}
               className="rounded-full"

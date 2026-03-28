@@ -21,6 +21,7 @@ export default async function Dashboard() {
       getGithubUser(accessToken),
       getRecentlyUpdatedRepositories(accessToken),
     ])
+    const totalStars = repositories.reduce((acc, repo) => acc + repo.stargazers_count, 0)
     return (
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
@@ -44,7 +45,7 @@ export default async function Dashboard() {
           />
           <StatCard
             label="Total stars"
-            value={repositories.reduce((acc, repo) => acc + repo.stargazers_count, 0).toString()}
+            value={totalStars.toString()}
             className="flex-1"
           />
         </div>

@@ -20,7 +20,7 @@ vi.mock("next/link", () => ({
   ),
 }))
 
-// vi.mocked returns a narrower type than Mock — assertion is necessary to access mockResolvedValue with correct signature
+// vi.mocked returns a wider type than Mock — assertion is necessary to access mockResolvedValue with correct signature
 const mockAuth = vi.mocked(auth) as Mock<() => Promise<Session | null>>
 
 describe("DashboardLayout", () => {

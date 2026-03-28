@@ -10,6 +10,8 @@ export function makeQueryClient() {
   })
 }
 
+// Browser singleton — reuse the same client across renders to preserve cache.
+// On the server, always create a new instance to avoid sharing state between requests.
 let browserQueryClient: QueryClient | undefined
 
 export function getQueryClient(): QueryClient {
