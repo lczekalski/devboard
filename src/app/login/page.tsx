@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 import { ContainerCard } from "@/components/ui/Container"
 
 import { handleLogin } from "./actions"
