@@ -1,14 +1,24 @@
-import { Button } from "@/lib/components/Button";
-import { ContainerCard } from "@/lib/components/Container";
+import { FaGithub } from "react-icons/fa"
+
+import { Button } from "@/components/ui/button"
+import { ContainerCard } from "@/components/ui/Container"
+
+import { handleLogin } from "./actions"
 
 export default function Login() {
-    return (<>
-        <div className="w-32  mx-auto flex flex-col justify-center items-center h-full">
-            <ContainerCard>
-                <h1>DevBoard</h1>
-                Your personal developer dashboard
-                <Button>Login with GitHub</Button>
-            </ContainerCard>
+  return (
+    <div className="mx-auto flex h-full flex-col items-center justify-center">
+      <ContainerCard className="min-h-64 w-lg justify-center gap-8">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <h1 className="text-2xl font-bold">DevBoard</h1>
+          <p className="text-sm text-muted-foreground">Your personal developer dashboard</p>
         </div>
-    </>)
+        <form action={handleLogin}>
+          <Button variant="outline" className="w-full" type="submit">
+            <FaGithub size={16} /> Login with GitHub
+          </Button>
+        </form>
+      </ContainerCard>
+    </div>
+  )
 }
