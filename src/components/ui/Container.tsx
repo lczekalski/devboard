@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils"
 
-export function ContainerCard({
-  children,
-  className,
-}: {
+interface ContainerCardProps {
   children: React.ReactNode
   className?: string
-}) {
+}
+
+export function ContainerCard({ children, className }: ContainerCardProps) {
   return (
     <div
       className={cn(

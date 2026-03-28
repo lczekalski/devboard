@@ -8,8 +8,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const session = await auth()
   const user = session?.user
   return (
-    <div className="m-2 flex h-[calc(100%-2rem)] w-[calc(100%-2rem)] flex-row rounded-2xl border border-surface-subtle">
-      <aside className="flex h-full w-64 flex-col rounded-l-2xl bg-sidebar py-3.5">
+    <div className="m-2 flex h-[var(--layout-shell-height)] w-[var(--layout-shell-width)] flex-row rounded-2xl border border-surface-subtle">
+      <aside className="flex h-full w-[var(--sidebar-width)] flex-col rounded-l-2xl bg-sidebar py-3.5">
         <div className="px-3.5">
           <Logo />
         </div>
@@ -27,7 +27,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
               height={32}
               className="rounded-full"
             />
-          )}{" "}
+          )}
           <p>{user?.name}</p>
         </div>
       </aside>

@@ -1,14 +1,13 @@
 "use server"
 
-import { isRedirectError } from "next/dist/client/components/redirect-error"
+import { isRedirectError } from "next/navigation"
 
 import { signIn } from "@/lib/auth"
 
-export async function handleLogin() {
+export async function handleLogin(): Promise<void> {
   try {
     await signIn("github", { redirectTo: "/dashboard" })
   } catch (error) {
-    if (isRedirectError(error)) throw error
-    return { error: "Failed to login" }
+    throw error
   }
 }

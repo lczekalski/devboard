@@ -8,7 +8,7 @@ import { handleLogin } from "./actions"
 export default function Login() {
   return (
     <div className="mx-auto flex h-full flex-col items-center justify-center">
-      <ContainerCard className="min-h-64 w-lg justify-center gap-8">
+      <ContainerCard className="py-10 h-64 w-lg justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="text-2xl font-bold">DevBoard</h1>
           <p className="text-sm text-muted-foreground">Your personal developer dashboard</p>

@@ -20,6 +20,9 @@ describe("Login", () => {
 
   it("renders the submit button", () => {
     render(<Login />)
-    expect(screen.getByRole("button", { name: /login with github/i })).toHaveAttribute("type", "submit")
+    expect(screen.getByRole("button", { name: /login with github/i })).toHaveAttribute(
+      "type",
+      "submit",
+    )
   })
 })

@@ -178,4 +178,9 @@
   --color-accent-light: var(--accent-light);
   --color-accent-dim: var(--accent-dim);
   --color-accent-border: var(--accent-border);
+
+  /* Layout */
+  --layout-shell-height: 95%;
+  --layout-shell-width: 90%;
+  --sidebar-width: 16rem;
 }
