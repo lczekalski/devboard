@@ -17,11 +17,21 @@ describe("SidebarNavigation", () => {
 
   it("renders dashboard link with correct href", () => {
     render(<SidebarNavigation />)
-    expect(screen.getByRole("link", { name: "Dashboard" })).toHaveAttribute("href", "/dashboard")
+    expect(screen.getByRole("link", { name: /dashboard/i })).toHaveAttribute("href", "/dashboard")
   })
 
   it("renders todos link with correct href", () => {
     render(<SidebarNavigation />)
-    expect(screen.getByRole("link", { name: "Todos" })).toHaveAttribute("href", "/todos")
+    expect(screen.getByRole("link", { name: /todos/i })).toHaveAttribute("href", "/todos")
+  })
+
+  it("renders dashboard link text", () => {
+    render(<SidebarNavigation />)
+    expect(screen.getByText("Dashboard")).toBeInTheDocument()
+  })
+
+  it("renders todos link text", () => {
+    render(<SidebarNavigation />)
+    expect(screen.getByText("Todos")).toBeInTheDocument()
   })
 })

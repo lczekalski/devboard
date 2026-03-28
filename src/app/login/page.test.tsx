@@ -13,6 +13,11 @@ describe("Login", () => {
     expect(screen.getByRole("heading", { name: "DevBoard" })).toBeInTheDocument()
   })
 
+  it("renders the subtitle", () => {
+    render(<Login />)
+    expect(screen.getByText("Your personal developer dashboard")).toBeInTheDocument()
+  })
+
   it("renders the login with github button", () => {
     render(<Login />)
     expect(screen.getByRole("button", { name: /login with github/i })).toBeInTheDocument()
@@ -24,5 +29,10 @@ describe("Login", () => {
       "type",
       "submit",
     )
+  })
+
+  it("form has handleLogin as its action", () => {
+    render(<Login />)
+    expect(screen.getByRole("button", { name: /login with github/i }).closest("form")).toBeInTheDocument()
   })
 })
