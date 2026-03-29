@@ -33,6 +33,8 @@ describe("Login", () => {
 
   it("form has handleLogin as its action", () => {
     render(<Login />)
-    expect(screen.getByRole("button", { name: /login with github/i }).closest("form")).toBeInTheDocument()
+    expect(
+      screen.getByRole("button", { name: /login with github/i }).closest("form"),
+    ).toBeInTheDocument()
   })
 })

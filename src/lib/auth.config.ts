@@ -6,4 +6,14 @@ export const authConfig: NextAuthConfig = {
   pages: {
     signIn: "/login",
   },
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    // token.sub is automatically set to user.id by Auth.js — copy it to session
+    session({ session, token }) {
+      session.user.id = token.sub!
+      return session
+    },
+  },
 }

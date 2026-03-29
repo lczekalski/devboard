@@ -25,7 +25,7 @@ export default async function Dashboard() {
     return (
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <PageHeader title="Dashboard" description="Dashboard description" />
+          <PageHeader title="Dashboard" description="Summary of your GitHub activity" />
         </div>
         <div className="flex flex-row gap-2">
           <StatCard
@@ -43,11 +43,7 @@ export default async function Dashboard() {
             value={githubUser.following.toString()}
             className="flex-1"
           />
-          <StatCard
-            label="Total stars"
-            value={totalStars.toString()}
-            className="flex-1"
-          />
+          <StatCard label="Total stars" value={totalStars.toString()} className="flex-1" />
         </div>
 
         <div className="grid grid-cols-2 gap-2">

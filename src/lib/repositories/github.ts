@@ -8,6 +8,9 @@ async function githubFetch<T extends object>(path: string, accessToken: string):
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/vnd.github+json",
     },
+    next: {
+      revalidate: 60,
+    },
   })
 
   if (!res.ok) throw new Error(`GitHub API error: ${res.status}`)

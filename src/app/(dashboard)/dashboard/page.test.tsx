@@ -5,7 +5,6 @@ import Dashboard from "@/app/(dashboard)/dashboard/page"
 import { auth } from "@/lib/auth"
 import { getUserGitHubAccount } from "@/lib/repositories/accounts"
 import { getGithubUser, getRecentlyUpdatedRepositories } from "@/lib/repositories/github"
-
 import type { GitHubRepo, GitHubUser } from "@/types/github"
 
 vi.mock("@/lib/auth", () => ({ auth: vi.fn() }))
