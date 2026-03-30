@@ -98,9 +98,24 @@ interface LearningItemsListItemsProps {
 
 function LearningItemsListItems({ learningItems }: LearningItemsListItemsProps) {
   const { optimisticItems, handleToggle } = useLearningItemToggle(learningItems)
-
+  const totalProgress = optimisticItems.filter((item) => item.done).length
+  const totalProgressPercentage = (totalProgress / optimisticItems.length) * 100
   return (
     <div className="flex w-full flex-col gap-4">
+      <div className="flex w-full flex-col gap-4 rounded-md bg-surface-card p-2 text-xs font-medium text-text-muted-3">
+        <div className="flex w-full flex-row items-center justify-between">
+          Total progress:{" "}
+          <span className="text-accent">
+            {optimisticItems.filter((item) => item.done).length} / {optimisticItems.length}
+          </span>
+        </div>
+        <div className="h-3 w-full rounded-md bg-accent-dim">
+          <div
+            className="h-full rounded-md bg-accent"
+            style={{ width: `${totalProgressPercentage}%` }}
+          ></div>
+        </div>
+      </div>
       {optimisticItems.map((item) => (
         <div
           key={item.id}
@@ -112,7 +127,14 @@ function LearningItemsListItems({ learningItems }: LearningItemsListItemsProps) 
             checked={item.done}
             onChange={() => handleToggle(item.id, item.done)}
           />
-          {item.title}
+          <span
+            className={cn(
+              "text-sm font-medium",
+              item.done ? "text-text-muted-3 line-through" : "text-accent-foreground",
+            )}
+          >
+            {item.title}
+          </span>
         </div>
       ))}
     </div>

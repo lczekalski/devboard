@@ -37,7 +37,7 @@ export function AddLearningItemForm({ onSuccess }: AddLearningItemFormProps) {
   }
   return (
     <div className="flex flex-col gap-1">
-      <h1>New Learning Item</h1>
+      <h2>New Learning Item</h2>
       <form onSubmit={handleSubmit(onSubmitForm)} className="mt-5 flex flex-col gap-4">
         <div>
           <input
