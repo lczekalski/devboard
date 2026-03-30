@@ -9,6 +9,10 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
+    globalSetup: ["./src/test/globalSetup.ts"],
+    env: {
+      DATABASE_URL: "file:./test.db",
+    },
   },
   resolve: {
     alias: {

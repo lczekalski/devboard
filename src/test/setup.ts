@@ -1,4 +1,6 @@
 import "@testing-library/jest-dom"
+import { afterEach, beforeAll } from "vitest"
+
 import { server } from "./msw/server"
 
 beforeAll(() => server.listen({ onUnhandledRequest: "warn" }))

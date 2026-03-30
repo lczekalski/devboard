@@ -40,11 +40,11 @@ export function SidebarNavigation() {
         Dashboard
       </NavigationLink>
       <NavigationLink
-        isActive={pathname === "/todos"}
-        href="/todos"
+        isActive={pathname === "/learning-items"}
+        href="/learning-items"
         icon={<TbChecklist className="size-4" />}
       >
-        Todos
+        Learning Items
       </NavigationLink>
     </div>
   )

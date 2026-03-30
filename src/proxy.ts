@@ -2,7 +2,7 @@ import NextAuth from "next-auth"
 
 import { authConfig } from "@/lib/auth.config"
 
-export const { auth: middleware } = NextAuth(authConfig)
+export const { auth: proxy } = NextAuth(authConfig)
 
 export const config = {
   // Protect all routes except auth, static files and login page

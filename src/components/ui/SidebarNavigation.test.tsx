@@ -20,9 +20,12 @@ describe("SidebarNavigation", () => {
     expect(screen.getByRole("link", { name: /dashboard/i })).toHaveAttribute("href", "/dashboard")
   })
 
-  it("renders todos link with correct href", () => {
+  it("renders learning items link with correct href", () => {
     render(<SidebarNavigation />)
-    expect(screen.getByRole("link", { name: /todos/i })).toHaveAttribute("href", "/todos")
+    expect(screen.getByRole("link", { name: /learning items/i })).toHaveAttribute(
+      "href",
+      "/learning-items",
+    )
   })
 
   it("renders dashboard link text", () => {
@@ -30,8 +33,8 @@ describe("SidebarNavigation", () => {
     expect(screen.getByText("Dashboard")).toBeInTheDocument()
   })
 
-  it("renders todos link text", () => {
+  it("renders learning items link text", () => {
     render(<SidebarNavigation />)
-    expect(screen.getByText("Todos")).toBeInTheDocument()
+    expect(screen.getByText("Learning Items")).toBeInTheDocument()
   })
 })

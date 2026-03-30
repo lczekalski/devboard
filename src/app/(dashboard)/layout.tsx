@@ -9,7 +9,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const user = session?.user
   return (
     <div className="m-2 flex h-[var(--layout-shell-height)] w-[var(--layout-shell-width)] flex-row rounded-2xl border border-surface-subtle">
-      <aside className="flex h-full w-[var(--sidebar-width)] flex-col rounded-l-2xl bg-sidebar py-3.5">
+      <aside className="flex h-[var(--sidebar-height)] w-[var(--sidebar-width)] flex-col rounded-l-2xl bg-sidebar py-3.5">
         <div className="px-3.5">
           <Logo />
         </div>
